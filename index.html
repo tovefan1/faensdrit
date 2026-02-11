@@ -1,170 +1,123 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Skoleportal</title>
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eksempel Polititjeneste</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+        }
 
-    body {
-        display: flex;
-        min-height: 100vh;
-        background-color: #f4f6f9;
-    }
+        header {
+            background-color: #1f3c88;
+            color: white;
+            padding: 20px;
+        }
 
-    /* Sidebar */
-    .sidebar {
-        width: 250px;
-        background-color: #1f2a40;
-        color: white;
-        padding: 20px;
-    }
+        header h1 {
+            margin: 0;
+        }
 
-    .sidebar h2 {
-        margin-bottom: 30px;
-        font-size: 22px;
-    }
+        nav {
+            background-color: #163172;
+            padding: 10px;
+        }
 
-    .sidebar ul {
-        list-style: none;
-    }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: bold;
+        }
 
-    .sidebar ul li {
-        margin: 15px 0;
-    }
+        nav a:hover {
+            text-decoration: underline;
+        }
 
-    .sidebar ul li a {
-        text-decoration: none;
-        color: white;
-        padding: 8px;
-        display: block;
-        border-radius: 6px;
-        transition: 0.3s;
-    }
+        .hero {
+            padding: 40px;
+            background-color: white;
+            text-align: center;
+        }
 
-    .sidebar ul li a:hover {
-        background-color: #324060;
-    }
+        .content {
+            padding: 40px;
+        }
 
-    /* Main content */
-    .main {
-        flex: 1;
-        padding: 30px;
-    }
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
 
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 30px;
-    }
+        footer {
+            background-color: #1f3c88;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
 
-    .header h1 {
-        font-size: 24px;
-        color: #333;
-    }
+        button {
+            background-color: #1f3c88;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-    .profile {
-        background-color: white;
-        padding: 10px 15px;
-        border-radius: 8px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    /* Cards */
-    .cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-    }
-
-    .card {
-        background-color: white;
-        padding: 20px;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    }
-
-    .card h3 {
-        margin-bottom: 10px;
-        color: #1f2a40;
-    }
-
-    .card p {
-        color: #555;
-        font-size: 14px;
-    }
-
-    .button {
-        display: inline-block;
-        margin-top: 10px;
-        padding: 8px 12px;
-        background-color: #2f6fed;
-        color: white;
-        text-decoration: none;
-        border-radius: 6px;
-        font-size: 14px;
-    }
-
-    .button:hover {
-        background-color: #1d4fc4;
-    }
-</style>
+        button:hover {
+            background-color: #163172;
+        }
+    </style>
 </head>
 <body>
 
-<div class="sidebar">
-    <h2>Skoleportal</h2>
-    <ul>
-        <li><a href="#">Dashboard</a></li>
-        <li><a href="#">Meldinger</a></li>
-        <li><a href="#">Fravær</a></li>
-        <li><a href="#">Timeplan</a></li>
-        <li><a href="#">Dokumenter</a></li>
-        <li><a href="#">Innstillinger</a></li>
-    </ul>
-</div>
+<header>
+    <h1>Eksempel Polititjeneste</h1>
+    <p>Trygghet og sikkerhet for alle</p>
+</header>
 
-<div class="main">
-    <div class="header">
-        <h1>Velkommen tilbake 👋</h1>
-        <div class="profile">
-            Ola Nordmann
-        </div>
+<nav>
+    <a href="#">Forside</a>
+    <a href="#">Tjenester</a>
+    <a href="#">Meld fra</a>
+    <a href="#">Kontakt</a>
+</nav>
+
+<section class="hero">
+    <h2>Velkommen</h2>
+    <p>Her finner du informasjon om våre tjenester og hvordan du kan kontakte oss.</p>
+    <button>Meld sak</button>
+</section>
+
+<section class="content">
+    <div class="card">
+        <h3>Anmeldelse</h3>
+        <p>Send inn anmeldelse digitalt via vårt sikre system.</p>
     </div>
 
-    <div class="cards">
-        <div class="card">
-            <h3>📩 Nye meldinger</h3>
-            <p>Du har 2 uleste meldinger fra skolen.</p>
-            <a href="#" class="button">Se meldinger</a>
-        </div>
-
-        <div class="card">
-            <h3>📅 Fravær</h3>
-            <p>Ingen registrert fravær denne uken.</p>
-            <a href="#" class="button">Registrer fravær</a>
-        </div>
-
-        <div class="card">
-            <h3>🕒 Timeplan</h3>
-            <p>Neste time: Matematikk kl. 09:30</p>
-            <a href="#" class="button">Se timeplan</a>
-        </div>
-
-        <div class="card">
-            <h3>📄 Dokumenter</h3>
-            <p>Nytt dokument lagt ut av skolen.</p>
-            <a href="#" class="button">Åpne</a>
-        </div>
+    <div class="card">
+        <h3>Pass og ID</h3>
+        <p>Bestill time for pass eller nasjonalt ID-kort.</p>
     </div>
-</div>
+
+    <div class="card">
+        <h3>Kontakt oss</h3>
+        <p>Telefon: 123 45 678<br>
+        E-post: kontakt@eksempel.no</p>
+    </div>
+</section>
+
+<footer>
+    &copy; 2026 Eksempel Polititjeneste – Dette er en demonstrasjonsside
+</footer>
 
 </body>
 </html>
