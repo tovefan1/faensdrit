@@ -121,3 +121,155 @@
 
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eksempel Polititjeneste</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+        }
+
+        header {
+            background-color: #1f3c88;
+            color: white;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #163172;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        .hero {
+            padding: 40px;
+            background-color: white;
+            text-align: center;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        button {
+            background-color: #1f3c88;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #163172;
+        }
+
+        #reportForm {
+            display: none;
+            margin-top: 20px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background-color: #1f3c88;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Eksempel Polititjeneste</h1>
+</header>
+
+<nav>
+    <a href="#">Forside</a>
+    <a href="#">Tjenester</a>
+    <a href="#">Kontakt</a>
+</nav>
+
+<section class="hero">
+    <h2>Velkommen</h2>
+    <p>Send inn anmeldelse digitalt.</p>
+    <button onclick="toggleForm()">Meld sak</button>
+</section>
+
+<section class="content">
+    <div id="reportForm" class="card">
+        <h3>Send inn anmeldelse</h3>
+
+        <label>Navn:</label>
+        <input type="text" id="name" required>
+
+        <label>Beskrivelse av hendelsen:</label>
+        <textarea id="description" rows="5" required></textarea>
+
+        <button onclick="submitReport()">Send</button>
+    </div>
+</section>
+
+<footer>
+    © 2026 Eksempel – Demonstrasjon
+</footer>
+
+<script>
+    function toggleForm() {
+        const form = document.getElementById("reportForm");
+        if (form.style.display === "none") {
+            form.style.display = "block";
+        } else {
+            form.style.display = "none";
+        }
+    }
+
+    function submitReport() {
+        const name = document.getElementById("name").value;
+        const description = document.getElementById("description").value;
+
+        if (name === "" || description === "") {
+            alert("Vennligst fyll ut alle felt.");
+            return;
+        }
+
+        alert("Takk for din anmeldelse, " + name + "!");
+
+        // Tøm skjema
+        document.getElementById("name").value = "";
+        document.getElementById("description").value = "";
+
+        // Skjul skjema
+        document.getElementById("reportForm").style.display = "none";
+    }
+</script>
+
+</body>
+</html>
+
